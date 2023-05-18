@@ -9,8 +9,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigureAutoMapper();
 builder.Services.ConfigureDataProviders();
 builder.Services.ConfigureServices();
+builder.Services.ConfigureCors(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseCors("AllowAll");
 
 if (app.Environment.IsDevelopment())
 {

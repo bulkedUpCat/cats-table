@@ -1,0 +1,45 @@
+.table {
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  thead{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+
+    tr{
+      background-color: #242361;
+      color: #ffffff;
+      text-align: center;
+      font-weight: bold;
+      display: flex;
+
+      th{
+        width: 100%;
+      }
+    }
+  }
+
+  tbody{
+    tr{
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border-bottom: 1px solid #dddddd;
+
+      &:nth-of-type(even){
+        background-color: #f3f3f3;
+      }
+    }
+  }
+
+  th, td{
+    padding: 1rem;
+  }
+}

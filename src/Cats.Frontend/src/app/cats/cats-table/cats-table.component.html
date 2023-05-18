@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+      </tr>
+      <tr>
+        <th>Breed</th>
+      </tr>
+      <tr>
+        <th>Size</th>
+      </tr>
+      <tr>
+        <th>Coat</th>
+      </tr>
+      <tr>
+        <th>Energy</th>
+      </tr>
+      <tr>
+        <th>Shedding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of cats">
+        <th>{{cat.id}}</th>
+        <th>{{cat.breed}}</th>
+        <th>{{cat.size}}</th>
+        <th>{{cat.coat}}</th>
+        <th>{{cat.energy}}</th>
+        <th>{{cat.shedding}}</th>
+      </tr>
+    </tbody>
+  </div>
+</div>

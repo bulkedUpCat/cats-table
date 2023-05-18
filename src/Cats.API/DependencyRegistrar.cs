@@ -31,4 +31,21 @@ public static class DependencyRegistrar
 
         return services;
     }
+
+    public static IServiceCollection ConfigureCors(
+        this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        services.AddCors(opt =>
+        {
+            opt.AddPolicy("AllowAll", config =>
+            {
+                config.AllowAnyOrigin();
+                config.AllowAnyMethod();
+                config.AllowAnyHeader();
+            });
+        });
+
+        return services;
+    }
 }
