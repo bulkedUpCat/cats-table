@@ -48,3 +48,5 @@ msbuild.wrn
 *.log
 *.dbmdl
 *.jfm
+
+node_modules/
