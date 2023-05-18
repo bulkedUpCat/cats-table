@@ -45,9 +45,6 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
-Backend/JourneyLog.PL/Properties/ServiceDependencies/
-Backend/JourneyLog.PL/Properties/serviceDependencies*
-
 *.log
 *.dbmdl
 *.jfm
