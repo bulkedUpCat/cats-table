@@ -7,6 +7,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureAutoMapper();
+builder.Services.ConfigureDataProviders();
+builder.Services.ConfigureServices();
 
 var app = builder.Build();
 

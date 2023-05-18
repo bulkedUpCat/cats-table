@@ -1,4 +1,8 @@
-﻿using Cats.API.MappingProfiles;
+﻿using Cats.API.DataProviders;
+using Cats.API.DataProviders.Interfaces;
+using Cats.API.MappingProfiles;
+using Cats.API.Services;
+using Cats.API.Services.Interfaces;
 
 namespace Cats.API;
 
@@ -8,6 +12,22 @@ public static class DependencyRegistrar
         this IServiceCollection services)
     {
         services.AddAutoMapper(typeof(CatProfile));
+
+        return services;
+    }
+
+    public static IServiceCollection ConfigureDataProviders(
+        this IServiceCollection services)
+    {
+        services.AddScoped<IDataProvider, DataProvider>();
+
+        return services;
+    }
+
+    public static IServiceCollection ConfigureServices(
+        this IServiceCollection services)
+    {
+        services.AddScoped<ICatService, CatService>();
 
         return services;
     }
