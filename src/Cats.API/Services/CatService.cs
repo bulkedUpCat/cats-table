@@ -18,9 +18,9 @@ public class CatService: ICatService
         _mapper = mapper;
     }
 
-    public IEnumerable<CatModel> GetAllCats()
+    public async Task<IEnumerable<CatModel>> GetAllCatsAsync()
     {
-        var cats = _dataProvider.GetAllCats();
+        var cats = await _dataProvider.GetAllCatsAsync();
         var catModels = _mapper.Map<IEnumerable<CatModel>>(cats);
 
         return catModels;

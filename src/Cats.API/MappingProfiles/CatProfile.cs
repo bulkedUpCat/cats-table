@@ -10,7 +10,10 @@ public class CatProfile: Profile
     public CatProfile()
     {
         CreateMap<Cat, CatModel>()
-            .ForMember(dest => dest.Coat, src => src.MapFrom(opt => GetEnumDescription(opt.Coat)));
+            .ForMember(dest => dest.Size, src => src.MapFrom(opt => GetEnumDescription(opt.Size)))
+            .ForMember(dest => dest.Coat, src => src.MapFrom(opt => GetEnumDescription(opt.Coat)))
+            .ForMember(dest => dest.Energy, src => src.MapFrom(opt => GetEnumDescription(opt.Energy)))
+            .ForMember(dest => dest.Shedding, src => src.MapFrom(opt => GetEnumDescription(opt.Shedding)));
     }
     
     private static string GetEnumDescription(Enum value)

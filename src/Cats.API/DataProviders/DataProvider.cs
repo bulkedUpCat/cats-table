@@ -14,8 +14,8 @@ public class DataProvider: IDataProvider
         _catEntityGenerator = new CatEntityGenerator();
     }
 
-    public IEnumerable<Cat> GetAllCats()
+    public Task<IEnumerable<Cat>> GetAllCatsAsync()
     {
-        return _catEntityGenerator.Generate(100);
+        return Task.FromResult(_catEntityGenerator.Generate(100));
     }
 }

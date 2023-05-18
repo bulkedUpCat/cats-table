@@ -4,5 +4,5 @@ namespace Cats.API.Services.Interfaces;
 
 public interface ICatService
 {
-    IEnumerable<CatModel> GetAllCats();
+    Task<IEnumerable<CatModel>> GetAllCatsAsync();
 }

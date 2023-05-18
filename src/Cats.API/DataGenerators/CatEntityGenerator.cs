@@ -1,4 +1,5 @@
-﻿using Bogus;
+﻿using System.Drawing;
+using Bogus;
 using Cats.API.Entities;
 using Cats.API.Enums;
 
@@ -25,7 +26,10 @@ public class CatEntityGenerator
         _faker = new Faker<Cat>()
             .RuleFor(c => c.Id, faker => faker.Random.Guid())
             .RuleFor(c => c.Breed, faker => faker.PickRandom(_catBreeds))
-            .RuleFor(c => c.Coat, faker => faker.PickRandom<CatCoat>());
+            .RuleFor(c => c.Size, faker => faker.PickRandom<CatSize>())
+            .RuleFor(c => c.Coat, faker => faker.PickRandom<CatCoat>())
+            .RuleFor(c => c.Energy, faker => faker.PickRandom<CatEnergy>())
+            .RuleFor(c => c.Shedding, faker => faker.PickRandom<CatShedding>());
     }
 
     public Cat Generate()
